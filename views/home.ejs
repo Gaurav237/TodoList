@@ -4,8 +4,39 @@
     <title>
         <%= title %>
     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>
+            TODO Web App
+        </h1>
+        <form action="/create-task" method="POST">
+            <div>
+                <label for="fdesc">Description</label>
+                <input type="text" name="description" placeholder="What task you need to do ?" id="fdesc" required>
+            </div>
+            <div>
+                <label for="fcateg">Category</label>
+                <select name="category" id="fcategory">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fdate">Due Date</label>
+                <input type="date" name="dueDate" id="fdate">
+            </div>
+        
+            <button type="submit"><i class="fa fa-calendar-plus-o"></i>
+                ADD TASK</button>
+        </form>
+    </div>
+
+
 </body>
 </html>
