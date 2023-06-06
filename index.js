@@ -3,6 +3,10 @@ const port = 8000;
 
 const app = express();
 
+// setting template engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 app.get('/', function(req, res){
     const data = {
         title: 'My Todo List'
