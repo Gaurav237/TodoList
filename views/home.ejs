@@ -35,6 +35,33 @@
             <button type="submit"><i class="fa fa-calendar-plus-o"></i>
                 ADD TASK</button>
         </form>
+
+        <div class="task-list-container">
+            <ul>
+                <% for(let i = 0; i < todo_list.length; i++) { %>
+                    <% let t = todo_list[i] %>
+                    <li class="task-item">
+                        <div class="t-description"> 
+                            <span>
+                                <input type="checkbox" name="<%= t._id %>" value="">
+                            </span>
+                            <span>
+                                <%= t.description %>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <%= t.dueDate.toISOString().substr(0,10) %>
+                            </span>
+                            <span class="t-category <%= t.category.toLowerCase() %>">
+                                <%= t.category %>
+                            </span>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+            
+        </div>
     </div>
 
 

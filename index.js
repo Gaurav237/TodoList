@@ -17,10 +17,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('assets'));
 
 app.get('/', function(req, res){
-    const data = {
-        title: 'My Todo List'
-    }
-    return res.render('home', data);
+    Todo.find({})
+        .then(tasks => {
+            return res.render('home', {
+                title: 'My Todo App',
+                todo_list: tasks
+            });
+        })
+        .catch(err => {
+            console.log('error in fetching the todo tasks from db : ', err);
+        })
 });
 
 // router for adding new task via form

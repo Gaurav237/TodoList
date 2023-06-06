@@ -49,5 +49,53 @@ label {
     font-weight: bold;
 }
 
+.task-list-container {
+    margin-top: 20px;
+}
 
   
+.task-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+}
+
+.task-item span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.t-description {
+    font-size: 2em;
+    flex-grow: 1;
+    margin-bottom: 4px;
+}
+
+.t-category {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.personal {
+    background-color: #007bff;
+}
+  
+.work {
+    background-color: #128a9c;
+}
+  
+.school {
+    background-color: #fb4b7a;
+}
+  
+.other {
+    background-color: #ffc107;
+}
